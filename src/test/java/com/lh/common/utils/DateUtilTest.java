@@ -17,7 +17,7 @@ public class DateUtilTest {
 	}
 
 	
-	
+	//返回某个日期范围的随机日期
 	@Test
 	public void testRandomDate() {
 		Calendar calendar = Calendar.getInstance();
@@ -31,19 +31,20 @@ public class DateUtilTest {
 	
 	}
 	
+	//返回传入日期的月初
 	@Test
 	public void testGetInitMonth() {
-		Date date = DateUtil.getInitMonth(new Date(100000000l));
+		Date date = DateUtil.getInitMonth(new Date(1000000000000l));
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		System.out.println(sdf.format(date));
 		
 	}
 	
-	//月末
+	////返回传入日期的月末
 	@Test
 	public void testGetEndMonth() {
 		Calendar date1 = Calendar.getInstance();
-		date1.set(2020, 1, 21);
+		date1.set(2020, 3, 21);
 		
 		Date date = DateUtil.getEndMonth(date1.getTime());
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -51,10 +52,11 @@ public class DateUtilTest {
 		
 	}
 	
+	//根据出生日期计算年龄
 	@Test
 	public void testGetAgeByBirthday() {
 		Calendar date1 = Calendar.getInstance();
-		date1.set(2010, 2, 27);
+		date1.set(2010, 2, 28);
 		System.out.println(DateUtil.getAgeByBirthday(date1.getTime()));
 	}
 }

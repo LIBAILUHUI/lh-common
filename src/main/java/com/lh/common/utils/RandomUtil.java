@@ -50,8 +50,19 @@ public class RandomUtil {
 	public static char randomCharacter (){
 		String str = "123456789abcdefghigklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
 		return str.charAt(random(0, str.length()-1));
-	
 	}
+	
+	//方法3-2：返回指定长度的0-9之间的随机字符。 (8分)
+		public static String randomNumber (int length){
+			String str = "0123456789"; 
+			String result = ""; 
+			for (int i = 0; i < length; i++) {
+				result += str.charAt(random(0, str.length()-1));
+			}
+			return result;
+		}
+	
+	
 	//方法4：返回参数length个字符串(5分)，方法内部要调用randomCharacter()方法 (4分)
 	public static String randomString(int length){
 		StringBuffer sBuffer = new StringBuffer();
