@@ -28,6 +28,7 @@ public class StringUtilTest {
 		System.out.println(StringUtil.hasText("1"));
 	}
 
+	//随机产生一个简体中文
 	@Test
 	public void testRandomChineseOne() {
 		System.out.println(StringUtil.randomChineseString());
@@ -46,4 +47,25 @@ public class StringUtilTest {
 		System.out.println(StringUtil.generateChineseName());
 	}
 
+	
+	//验证是否为邮箱
+	@Test
+	public void testIsEmail() {
+		boolean email = StringUtil.isEmail("52@163.com");
+		System.out.println(email);
+	}
+	
+	//验证是否为手机号
+	@Test
+	public void testIsPhoneNo() {
+		boolean phoneNo = StringUtil.isPhoneNo("14689096747");
+		System.out.println(phoneNo);
+	}
+	
+	//验证是否为数字,包含正数负数小数
+	@Test
+	public void testIsNumber() {
+		boolean number = StringUtil.isNumber("-12");
+		System.out.println(number);
+	}
 }

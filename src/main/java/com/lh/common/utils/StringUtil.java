@@ -2,6 +2,8 @@ package com.lh.common.utils;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Random;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * 
@@ -64,4 +66,47 @@ public class StringUtil {
 		return name1+name2;
 	}
 
+	
+	/**
+	 * 
+	 * @Title: isEmail 
+	 * @Description: 是否邮箱
+	 * @param email
+	 * @return
+	 * @return: boolean
+	 */
+	public static boolean isEmail(String email) {
+		String regex = "^([a-z0-9A-Z]+[-|\\.]?)+[a-z0-9A-Z]@([a-z0-9A-Z]+(-[a-z0-9A-Z]+)?\\.)+[a-zA-Z]{2,}$"; 
+		Pattern pattern = Pattern.compile(regex);
+		Matcher matcher = pattern.matcher(email);
+		boolean isMatch = matcher.matches();
+		return isMatch;
+	}
+	
+	//是否是手机号,正则表达式
+	public static boolean isPhoneNo(String phoneNum) {
+		String regex = "^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(17[013678])|(18[0,5-9]))\\d{8}$";
+		Pattern pattern = Pattern.compile(regex);
+		Matcher matcher = pattern.matcher(phoneNum);
+		boolean isMatch = matcher.matches();
+		return isMatch;
+	}
+	
+	//是否是数字，正数负数，小数都算
+	public static boolean isNumber(String number) {
+		String regex = "^[-|+|]?\\d+(.\\d+)?$";
+		Pattern pattern = Pattern.compile(regex);
+		Matcher matcher = pattern.matcher(number);
+		boolean isMatch = matcher.matches();
+		return isMatch;
+	}
+	
+	//验证是否全为字母
+	public static boolean isCharacter(String charcter) {
+		String regex = "[a-zA-Z]?";
+		Pattern pattern = Pattern.compile(regex);
+		Matcher matcher = pattern.matcher(charcter);
+		boolean isMatch = matcher.matches();
+		return isMatch;
+	}
 }
