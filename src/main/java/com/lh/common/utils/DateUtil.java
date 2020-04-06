@@ -108,6 +108,12 @@ public class DateUtil {
 		
 		//获取日历类
 		Calendar c = Calendar.getInstance();
+		//如果当前时间早于生日
+		if(c.getTime().before(birthday)) {
+			throw new IllegalArgumentException("The birthday is before NOW.It's unbelievable!");
+		}
+		
+		
 		//获取系统的年
 		int sysYear = c.get(Calendar.YEAR);
 		int sysMonth = c.get(Calendar.MONTH);
@@ -132,5 +138,15 @@ public class DateUtil {
 		}
 		
 		return age;
+	}
+	
+	//判断是否为当天
+	public static boolean isToday(Date date) {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		if(sdf.format(date).equals(sdf.format(new Date()))) {
+			return true;
+		}else {
+			return false;
+		}
 	}
 }

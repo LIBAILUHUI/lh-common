@@ -37,5 +37,13 @@ public class RandomUtilTest {
 		String randomString = RandomUtil.randomString(3);
 		System.out.println(randomString);
 	}
+	
+	
+	@Test
+	public void testRandomCharacterByLength() {
+		
+		System.out.println(RandomUtil.randomCharacterByLength(10));
+	}
+	
 
 }

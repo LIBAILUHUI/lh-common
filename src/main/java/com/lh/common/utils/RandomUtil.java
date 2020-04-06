@@ -62,6 +62,21 @@ public class RandomUtil {
 		return result;
 	}
 	
+	//方法3-3：返回指定长度的随机英文字符。 (8分)
+	public static String randomCharacterByLength (int length){
+		StringBuffer sBuffer = new StringBuffer();
+		Random random = new Random();
+		for (int i = 0; i < length; i++) {
+			int t = 'A'+random.nextInt(26);
+			sBuffer.append((char)t);
+		}
+		
+		return sBuffer.toString();
+		
+	}
+	
+	
+	
 	
 	//方法4：返回参数length个字符串(5分)，方法内部要调用randomCharacter()方法 (4分)
 	public static String randomString(int length){
@@ -73,5 +88,7 @@ public class RandomUtil {
 		}
 		return sBuffer.toString();
 	}
-
+	
+	
+	
 }

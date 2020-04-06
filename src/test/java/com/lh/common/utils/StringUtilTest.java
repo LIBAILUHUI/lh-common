@@ -51,21 +51,21 @@ public class StringUtilTest {
 	//验证是否为邮箱
 	@Test
 	public void testIsEmail() {
-		boolean email = StringUtil.isEmail("52@163.com");
+		boolean email = StringUtil.isEmail("889@163");
 		System.out.println(email);
 	}
 	
 	//验证是否为手机号
 	@Test
 	public void testIsPhoneNo() {
-		boolean phoneNo = StringUtil.isPhoneNo("14689096747");
+		boolean phoneNo = StringUtil.isPhoneNo("146678956");
 		System.out.println(phoneNo);
 	}
 	
 	//验证是否为数字,包含正数负数小数
 	@Test
 	public void testIsNumber() {
-		boolean number = StringUtil.isNumber("-12");
+		boolean number = StringUtil.isNumber("+12.0");
 		System.out.println(number);
 	}
 }

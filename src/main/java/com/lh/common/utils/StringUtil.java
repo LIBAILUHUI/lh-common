@@ -83,6 +83,21 @@ public class StringUtil {
 		return isMatch;
 	}
 	
+	/**
+	 * 
+	 * @Title: isEmail2 
+	 * @Description: 判断是否是邮箱格式
+	 * @param src
+	 * @return
+	 * @return: boolean
+	 */
+	public static boolean isEmail2(String src) {
+		String reg = "\\w+\\@\\w+\\.\\w+";
+		return src.matches(reg);
+	}
+	
+	
+	
 	//是否是手机号,正则表达式
 	public static boolean isPhoneNo(String phoneNum) {
 		String regex = "^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(17[013678])|(18[0,5-9]))\\d{8}$";
@@ -91,16 +106,14 @@ public class StringUtil {
 		boolean isMatch = matcher.matches();
 		return isMatch;
 	}
-	
 	//是否是数字，正数负数，小数都算
 	public static boolean isNumber(String number) {
-		String regex = "^[-|+|]?\\d+(.\\d+)?$";
+		String regex = "^[-|+]?\\d+(.\\d+)?$";
 		Pattern pattern = Pattern.compile(regex);
 		Matcher matcher = pattern.matcher(number);
 		boolean isMatch = matcher.matches();
 		return isMatch;
 	}
-	
 	//验证是否全为字母
 	public static boolean isCharacter(String charcter) {
 		String regex = "[a-zA-Z]?";
@@ -109,4 +122,6 @@ public class StringUtil {
 		boolean isMatch = matcher.matches();
 		return isMatch;
 	}
+	
+	
 }

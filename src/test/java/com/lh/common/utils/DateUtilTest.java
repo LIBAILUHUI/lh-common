@@ -56,7 +56,16 @@ public class DateUtilTest {
 	@Test
 	public void testGetAgeByBirthday() {
 		Calendar date1 = Calendar.getInstance();
-		date1.set(2010, 2, 28);
+		date1.set(2019, 2, 28);
 		System.out.println(DateUtil.getAgeByBirthday(date1.getTime()));
 	}
+	
+	//是否是今天
+	@Test
+	public void testIsToday() {
+		Calendar calendar = Calendar.getInstance();
+		calendar.set(2020, 2, 29);
+		System.out.println(DateUtil.isToday(calendar.getTime()));
+	}
+	
 }
