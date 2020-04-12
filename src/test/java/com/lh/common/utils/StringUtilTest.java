@@ -68,4 +68,11 @@ public class StringUtilTest {
 		boolean number = StringUtil.isNumber("+12.0");
 		System.out.println(number);
 	}
+	
+	//验证传入的参数是否为url
+	@Test
+	public void testURL() {
+		boolean result = StringUtil.isHttpUrl("adadam");
+		System.out.println(result);
+	}
 }

@@ -1,6 +1,9 @@
 package com.lh.common.utils;
 
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -123,5 +126,24 @@ public class StringUtil {
 		return isMatch;
 	}
 	
+	/**
+	 * 
+	 * @Title: isHttpUrl 
+	 * @Description: 校验传入的参数是否是url
+	 * @param param
+	 * @return
+	 * @return: boolean
+	 */
+	public static boolean isHttpUrl(String param) {
+		URL url;
+		try {
+			url = new URL(param);
+			url.openStream();
+			return true;
+		} catch (Exception e) {
+			System.out.println("连接打不开!");
+		}
+		return false;
+	}
 	
 }

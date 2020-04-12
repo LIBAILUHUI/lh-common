@@ -149,4 +149,18 @@ public class DateUtil {
 			return false;
 		}
 	}
+	
+	/**
+	 * 
+	 * @Title: getDateOneDayBefore 
+	 * @Description:返回昨天的时间
+	 * @return
+	 * @return: Date
+	 */
+	public static Date getDateOneDayBefore() {
+		Calendar calendar = Calendar.getInstance();
+		//系统时间减去1天
+		calendar.add(Calendar.DAY_OF_MONTH, -1);
+		return calendar.getTime();
+	}
 }
