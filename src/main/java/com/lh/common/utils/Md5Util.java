@@ -6,8 +6,8 @@ import org.apache.commons.codec.digest.DigestUtils;
  * 
  * @ClassName: Md5Util 
  * @Description: 对密码进行加密处理
- * @author: charles
- * @date: 2020年3月12日 上午9:51:41
+ * @author: Administrator
+ * @date: 2020年4月10日 上午9:51:41
  */
 public class Md5Util {
 	
